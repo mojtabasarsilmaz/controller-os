@@ -1,0 +1,7 @@
+# .py configs
+venv
+__pycache__
+
+# config_app
+bin/config.py
+

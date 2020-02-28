@@ -1,0 +1,6 @@
+# SECRET_KEY
+SECRET_KEY = 'your secret key'
+
+# USERNAME AND PASSWORD
+username = 'username'
+password = 'password'
