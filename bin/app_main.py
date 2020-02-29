@@ -1,5 +1,8 @@
 from flask import Flask, request, redirect, render_template, flash
 from flask_login import LoginManager, UserMixin, login_user, UserMixin, login_required, logout_user
+import dpcenter
+from subprocess import check_output, CalledProcessError
+import json
 import config
 
 app = Flask(__name__)
@@ -29,6 +32,16 @@ def check_login():
 @app.route('/', methods=['GET', 'POST'])
 @login_required
 def main():
+	dpcenter.start()
+	if request.method == "POST":
+		command = request.form['command'] 
+		try:
+			exit_command = check_output(command, shell=True)
+		except CalledProcessError:
+			exit_command = command+" Not Found"
+		flash(exit_command)
+		return render_template('index.html')
+
 	return render_template('index.html')
 
 @login_manager.user_loader

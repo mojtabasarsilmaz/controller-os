@@ -53,7 +53,7 @@ $(function() {
         label: 'Dataset 3',
         data: [15, 10, 21, 32, 12, 33],
         borderColor: [
-          '#f44252'
+          '#f4252'
         ],
         borderWidth: 2,
         fill: false

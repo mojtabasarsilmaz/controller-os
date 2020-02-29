@@ -4,3 +4,6 @@ SECRET_KEY = 'your secret key'
 # USERNAME AND PASSWORD
 username = 'username'
 password = 'password'
+
+# path of you dashbord js absolut link
+PATH_JS = /home/{username}/controller/bin/dashboard_symlink.js

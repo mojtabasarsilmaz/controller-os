@@ -4,7 +4,7 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
   <title>Mojtaba PC | ADMIN</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ url_for('static', filename='home/vendors/mdi/css/materialdesignicons.min.css') }}">
@@ -281,7 +281,7 @@
               </div>
             </div>
           </div>-->
-          <div class="row">
+          <!--<div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body dashboard-tabs p-0">
@@ -289,12 +289,12 @@
                     <li class="nav-item">
                       <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">View</a>
                     </li>
-                    <!--<li class="nav-item">
+                    <li class="nav-item">
                       <a class="nav-link" id="sales-tab" data-toggle="tab" href="#sales" role="tab" aria-controls="sales" aria-selected="false">Sales</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" id="purchases-tab" data-toggle="tab" href="#purchases" role="tab" aria-controls="purchases" aria-selected="false">Purchases</a>
-                    </li>-->
+                    </li>
                   </ul>
                   <div class="tab-content py-0 px-0">
                     <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
@@ -445,13 +445,13 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
           <div class="row">
             <div class="col-md-7 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Cash deposits</p>
-                  <p class="mb-4">To start a blog, think of a topic about and first brainstorm party is ways to write details</p>
+                  <p class="card-title">Performance Monitor</p>
+                  <p class="mb-4">Check your Ram, CPU and Network</p>
                   <div id="cash-deposits-chart-legend" class="d-flex justify-content-center pt-3"></div>
                   <canvas id="cash-deposits-chart"></canvas>
                 </div>
@@ -459,7 +459,7 @@
             </div>
             <div class="col-md-5 grid-margin stretch-card">
               <div class="card">
-                <div class="card-body">
+                <!--<div class="card-body">
                   <p class="card-title">Total sales</p>
                   <h1>$ 28835</h1>
                   <h4>Gross sales over the years</h4>
@@ -467,7 +467,20 @@
                   <div id="total-sales-chart-legend"></div>                  
                 </div>
                 <canvas id="total-sales-chart"></canvas>
-              </div>
+              </div>-->
+              <form class="input-group mb-3 p-2" action="\" method="POST">
+                <input type="text" class="form-control" name='command' placeholder="Enter your command" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <input name='submit' type="submit" value='Send Command' class="btn btn-outline-secondary">
+                </div>
+              </form>
+              {% with exit_command = get_flashed_messages() %}
+                {% if exit_command %}
+                    <div class="p-3">
+                      <span style="color: red">Bash:</span> {{ exit_command[0] }}
+                    </div>
+                {% endif %}
+              {% endwith %}
             </div>
           </div>
           <div class="row">
